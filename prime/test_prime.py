@@ -50,7 +50,7 @@ class TestBadValues(unittest.TestCase):
         for maxi in [-3, 5.5, 4.0, 0, 1]:
             self.assertRaises(AssertionError, prime.Primes, maxi)
 
-    def test_bad_isprime_value(self):
+    def test_bad_isprime_argument(self):
         "isprime should fail with not integer and too big or small values."
         for n in [-3, 5.5, 4.0, 0, 21]:
             self.assertRaises(AssertionError, self.p.isprime, n)
