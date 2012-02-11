@@ -1,4 +1,4 @@
-##!/usr/bin/env python
+#!/usr/bin/env python
 # coding: utf-8
 
 """Tests of the prim module
@@ -10,7 +10,6 @@ import unittest
 import prime
 
 __author__ = 'Arpad Horvath'
-# cl wh for ifmain def defs imp
 
 #Eratosthenes' sieves = Eratoszthenészi szita
 
@@ -32,7 +31,7 @@ class TestKnownValues(unittest.TestCase):
             self.assertEqual(p.primes, primes)
             self.assertEqual(p.twin_primes(), twin_primes)
 
-    def test_prims(self):
+    def test_primes(self):
         "isprime should give the proper boolean value"
         primes = [2, 3, 5, 7, 11, 13, 17, 19]
         not_primes = [i for i in range(1,21) if i not in primes]
