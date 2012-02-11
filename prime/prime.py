@@ -14,6 +14,7 @@ class Primes(object):
     """Create the list of primes.
     """
     def __init__(self, maxi=10000):
+        assert isinstance(maxi, int) and maxi > 1
         self.maxi = maxi
         nums = range(maxi+1)
         nums[0:2] = [0, 0]
@@ -32,6 +33,7 @@ class Primes(object):
             ]
 
     def isprime(self, n):
+        assert isinstance(n, int) and 0 < n <= self.maxi
         return n in self.primes
 
 
