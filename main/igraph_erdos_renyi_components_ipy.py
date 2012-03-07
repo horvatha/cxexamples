@@ -15,21 +15,21 @@ from igraph import plot as iplot
  import pylab
 # esetén pedig pylab.függvény() alakban hívhatóak a pylab függvényei.
 
-nw = Graph.Erdos_Renyi(1000, .001)
+net = Graph.Erdos_Renyi(1000, .001)
 
-summary(nw)
+summary(net)
 
-M=nw.ecount()
-N = nw.vcount()
+M=net.ecount()
+N = net.vcount()
 Mmax = N*(N-1)/2
 Mmax
 M/Mmax
 p = 1.*M/Mmax
 
-nw.diameter()
+net.diameter()
 
-nw.components()
-cc=nw.components()  # (összefüggő) komponensek, (connected) components
+net.components()
+cc=net.components()  # (összefüggő) komponensek, (connected) components
 ccs = cc.sizes()
 max(ccs)
 average(ccs)
@@ -67,9 +67,9 @@ iplot(gc, layout="kk")
 iplot(gc, "giant_componentER1000_001.pdf", layout="kk")
 
 # Megnéztük egy kicsit más p-re is, és jelentősen mást kaptunk.
-nw = Graph.Erdos_Renyi(1000, .0015)
-summary(nw)
-cc = nw.components()
+net = Graph.Erdos_Renyi(1000, .0015)
+summary(net)
+cc = net.components()
 gc = cc.giant()
 gc.vcount()
 1000/275.
