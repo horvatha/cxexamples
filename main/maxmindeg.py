@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+"""Network is an inherited class of igraph.Graph.
+
+It has one additional method: maxmindegree.
+
+"""
+
+
 import igraph
 class Network(igraph.Graph):
     def maxmindegree(self, write=True):
@@ -9,7 +19,10 @@ class Network(igraph.Graph):
                   max(deg),min(deg)))
         return max(deg), min(deg)
 
-net = Network().Full(8)
-maxd, mind = net.maxmindegree(write=False)
-print(net.maxmindegree())
-print(net.maxmindegree.__doc__)
+if __name__ == '__main__':
+    net = Network.Full(8)
+    maxd, mind = net.maxmindegree(write=False)
+    print(net.maxmindegree())
+    print(net.maxmindegree.__doc__)
+    net = Network.Formula("a-b-c-d, a-c, b-d")
+    print(net.maxmindegree(False))
