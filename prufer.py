@@ -30,11 +30,12 @@ class MyGraph(igraph.Graph):
             return None
 
 def test():
-    for formula in ["1--2--3--4, 2--5, 3--6",
-                    "1--2--3--1, 2--5, 3--6"]:
+    for formula in ["1-2-3-4, 2-5, 3-6",
+                    "1-2-3-1, 2-5, 3-6"]:
         testnet = MyGraph.Formula(formula)
         net = testnet.copy()
         code =  testnet.prufer()
+        print 'Graph.Formula("{0}")'.format(formula)
         if code is None:
             print "Not tree."
         else:
