@@ -23,6 +23,7 @@ class Network(igraph.Graph):
                 name = int(self.vs[neig]["name"])
                 li.append(name)
                 self.delete_vertices(level)
+                vc -= 1
             return li
         else:
             return None
